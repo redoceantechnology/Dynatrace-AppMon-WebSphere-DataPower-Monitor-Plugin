@@ -746,10 +746,10 @@ public class DataPowerMonitor implements Monitor, Migrator {
             httpMethod = new PostMethod(url); // set the POST data
 
             String authString = config.serverUsername + ":" + config.serverPassword;
-            log.log(Level.FINE, "auth string: {0}", authString);
+            // Removed log.log(Level.FINE, "auth string: {0}", authString);
             byte[] authEncBytes = Base64.encodeBase64(authString.getBytes());
             String authStringEnc = new String(authEncBytes);
-            log.log(Level.FINE, "Base64 encoded auth string: {0}", authStringEnc);
+            // Removed log.log(Level.FINE, "Base64 encoded auth string: {0}", authStringEnc);
 
             httpMethod.addRequestHeader("Authorization", "Basic " + authStringEnc);
 
@@ -801,10 +801,10 @@ public class DataPowerMonitor implements Monitor, Migrator {
             if (config.proxyAuth) {
 
                 String authString = config.serverUsername + ":" + config.serverPassword;
-                log.log(Level.FINE, "auth string: {0}", authString);
+                // Removed log.log(Level.FINE, "auth string: {0}", authString);
                 byte[] authEncBytes = Base64.encodeBase64(authString.getBytes());
                 String authStringEnc = new String(authEncBytes);
-                log.log(Level.FINE, "Base64 encoded auth string: {0}", authStringEnc);
+                // Removed log.log(Level.FINE, "Base64 encoded auth string: {0}", authStringEnc);
                 //encryptedServerUsername = (String) myEncoder.encode(config.serverUsername);
                 //encryptedServerPassword = (String) myEncoder.encode(config.serverPassword);
                 UsernamePasswordCredentials credentials = new UsernamePasswordCredentials(authStringEnc);
