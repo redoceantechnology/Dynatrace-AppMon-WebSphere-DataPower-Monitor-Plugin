@@ -1,5 +1,9 @@
 # IntelliJ
 .idea/
+.classpath
+.project
+build.properties
+build/
 
 # Windows image file caches
 Thumbs.db
